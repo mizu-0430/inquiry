@@ -46,9 +46,9 @@
       </v-menu>
     </v-app-bar>
     <!-- Navigation -->
-    <v-navigation-drawer border="0" color="primary" v-model="drawer" :expand-on-hover="mdAndUp" :rail="mdAndUp">
+    <v-navigation-drawer border="0" color="primary" v-model="drawer">
       <v-divider/>
-      <v-list nav density="compact">
+      <v-list nav>
         <v-list-item v-for="(item, i) in navigation" :key="i"
                      :prepend-icon="item.icon" :title="item.title" :to="item.to"/>
       </v-list>
@@ -64,9 +64,13 @@
 
 import {onMounted, ref} from 'vue'
 import {useDisplay} from 'vuetify'
+// import {useAppStore} from "@/store/app";
 
 const {mdAndUp} = useDisplay()
+
 const drawer = ref(false)
+
+// const appStore = useAppStore()
 
 onMounted(() => {
   // screen

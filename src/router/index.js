@@ -1,10 +1,12 @@
 // Composables
 import {createRouter, createWebHistory} from 'vue-router'
+import main from '/src/views/MainPage.vue'
+import login from '/src/views/LoginPage.vue'
 
 const routes = [
   {
     path: '/',
-    component: () => import('@/views/MainPage.vue'),
+    component: main,
     children: [
       {
         path: '/',
@@ -43,7 +45,7 @@ const routes = [
   },
   {
     path: '/login',
-    component: () => import('@/views/LoginPage.vue'),
+    component: login,
   },
 ]
 
